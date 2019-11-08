@@ -1,5 +1,5 @@
 $main-col:#fdfdfd;
-$sec-col:rgb(230,109,23);
+$sec-col:rgb(255, 122, 27);
 $thi-col:rgb(67, 66, 73);
 
 * {
@@ -13,6 +13,7 @@ html,body {
   font-family: Raleway,sans-serif;
   color:#202020;
   position: relative;
+  background-color: $main-col;
 }
 body {
   min-height: 100%;
@@ -27,30 +28,31 @@ p {
 
 .topbar {
   width: 100%;
-  height: 50px;
+  height: 34px;
   background-color: $thi-col;
   display: flex;
   justify-content: center;
   div {
     margin:0 20%;
-    padding:15px;
+    padding:7px;
     color: white;
   }
 }
 .overlay {
   height:100%;
   width: 100%;
-  background-color: rgba(34, 34, 34, 0.582);
+  background-color: rgba(34, 34, 34, 0.6);
   position: absolute;
   color: white;
 }
 // Snippet
-nav{  
+.navbar {  
   background:$main-col;
   height:120px;
   width:100%;
-  z-index: 9;
-  box-shadow: 0px 4px 4px #00000077 ;
+  position:relative;
+  z-index: 99;
+  box-shadow: 0px 8px 20px #00000077 ;
   ul{
     margin:0 200px;
     padding:0;
@@ -87,6 +89,26 @@ nav{
     }
   }
 }
+.menu {   
+  display:none;
+  background-color: rgba(0,0,0,0);
+  height:50px;
+  width: 50px;
+  margin-bottom: -80px;
+  position: fixed;
+  z-index: 99999;
+  right:20px;
+  top:20px; 
+   
+  div {
+    width:100%;
+    height:10px;
+    border-radius: 5px;
+    margin:6px 0;
+    background-color: $sec-col;
+    
+  }
+}
 /*nav, nav ul, nav ul li, nav ul li a {
   transition:height 0.3s;
 }*/
@@ -94,8 +116,8 @@ nav{
 section{
   height: 100vh;
   position:relative;
-  margin: 0;
-  padding: 20px 0;  
+  margin-bottom: 20px;
+  padding:0;  
   display:block;
   z-index: 0;
   overflow: hidden;
@@ -112,15 +134,7 @@ section{
     position: 0px 50px; 
   }
 }
-#work {
-  background:$main-col;
-}
-#about {
-  background:$main-col;
-}
-#contact {
-  background:$main-col;
-}
+
 #projects {
   height: auto;
 }
@@ -136,7 +150,9 @@ h2{
   left: 0;
   height: 100px !important;
   .logo {
-    height:100px !important;
+    height:100px;
+    width:200px;
+    transition: none !important;    
   }
   ul {
     height: 100px !important;
@@ -152,15 +168,29 @@ h2{
 .logo {
   height:120px;
   width:200px;
+  background-image: url("logo.png");
+  
+  background-position: center center; 
+  background-repeat: no-repeat;   
+  transition:height 0.3s;   
+  border-radius: 30px; 
+  background-color: $main-col;
+}
+.footer-logo {
+  height:120px;
+  width:200px;
   background: url("logo.png") center center;   
-  margin-right: auto;
-  transition:height 0.3s;
-  position: absolute;  
+  top:30px;
+  margin: 0;  
+  left:50px;
+  position: absolute; 
+  border-radius: 30px; 
+  background-color: $main-col;
 }
 .display {
   width:80%;
   height:80%;
-  margin:10% auto;
+  margin:0 auto 10%;
   background-color: $main-col;
   display: flex;
   flex-wrap: nowrap;
@@ -241,11 +271,11 @@ h2{
     outline-offset: 2px;
     margin-right: 8px;
     opacity: 0.7;
-    transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;   
 }
 .owl-theme .owl-controls .owl-page.active span{
     background: #fff;
-    outline: 2px solid #fff;
+    outline: 2px solid #fff;   
 }
 /* ^^for testimonial^^ */
 
@@ -349,7 +379,7 @@ footer {
   background-color: $thi-col;  
   div {    
     height:100%;
-    width: 350px;
+    width: 300px;
     background-color: $thi-col;
     margin:0 5vw;
     position: relative;
@@ -360,10 +390,41 @@ i {
   position: relative;
   bottom:20%;
 }
-
+@media only screen and (max-width:850px) {
+  .menu {
+    display: block;
+  }
+  nav ul li:not(:last-child):not(:first-child) {
+    display: none;
+  }
+  .topbar {
+    display: none;
+  }
+}
+@media only screen and (max-width:768px) {
+  section {
+    height: 900px;
+  }
+  .display {    
+    height: 600px;
+  }
+}
 @media only screen and (max-width:600px) {
   .display {
+    justify-content: center;
     flex-direction: column;
-    height: 1600px;
+    .content {
+      width: 90%;
+    }
+    .image {
+      width: 90%;
+    }
   }
+  footer {
+    height: 610px;
+    flex-direction: column-reverse;
+    div {
+      margin:10px auto;
+    }
+  }  
 } 

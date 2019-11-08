@@ -10,6 +10,7 @@ html, body {
   font-family: Raleway, sans-serif;
   color: #202020;
   position: relative;
+  background-color: #fdfdfd;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
 
 h1 {
   font-size: 36px;
-  border-bottom: 3px solid #e66d17;
+  border-bottom: 3px solid #ff7a1b;
 }
 
 p {
@@ -27,33 +28,34 @@ p {
 
 .topbar {
   width: 100%;
-  height: 50px;
+  height: 34px;
   background-color: #434249;
   display: flex;
   justify-content: center;
 }
 .topbar div {
   margin: 0 20%;
-  padding: 15px;
+  padding: 7px;
   color: white;
 }
 
 .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(34, 34, 34, 0.582);
+  background-color: rgba(34, 34, 34, 0.6);
   position: absolute;
   color: white;
 }
 
-nav {
+.navbar {
   background: #fdfdfd;
   height: 120px;
   width: 100%;
-  z-index: 9;
-  box-shadow: 0px 4px 4px #00000077;
+  position: relative;
+  z-index: 99;
+  box-shadow: 0px 8px 20px #00000077;
 }
-nav ul {
+.navbar ul {
   margin: 0 200px;
   padding: 0;
   list-style: none;
@@ -63,10 +65,10 @@ nav ul {
   margin: 0 auto;
   height: 120px;
 }
-nav ul li {
+.navbar ul li {
   height: 120px;
 }
-nav ul li a {
+.navbar ul li a {
   padding: 55px 20px;
   display: block;
   height: 120px;
@@ -77,14 +79,33 @@ nav ul li a {
   border-bottom: 4px solid #00000000;
   transition: all 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
 }
-nav ul li a:hover {
-  border-bottom: 3px solid #e66d17;
+.navbar ul li a:hover {
+  border-bottom: 3px solid #ff7a1b;
   background-color: #f0f0f0;
-  color: #e66d17;
+  color: #ff7a1b;
 }
-nav ul .active a {
+.navbar ul .active a {
   background-color: #dfdfdf;
-  border-bottom: 3px solid #e66d17;
+  border-bottom: 3px solid #ff7a1b;
+}
+
+.menu {
+  display: none;
+  background-color: rgba(0, 0, 0, 0);
+  height: 50px;
+  width: 50px;
+  margin-bottom: -80px;
+  position: fixed;
+  z-index: 99999;
+  right: 20px;
+  top: 20px;
+}
+.menu div {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin: 6px 0;
+  background-color: #ff7a1b;
 }
 
 /*nav, nav ul, nav ul li, nav ul li a {
@@ -93,8 +114,8 @@ nav ul .active a {
 section {
   height: 100vh;
   position: relative;
-  margin: 0;
-  padding: 20px 0;
+  margin-bottom: 20px;
+  padding: 0;
   display: block;
   z-index: 0;
   overflow: hidden;
@@ -109,18 +130,6 @@ section {
   background-size: cover;
   background-attachment: fixed;
   background-position: 0px 50px;
-}
-
-#work {
-  background: #fdfdfd;
-}
-
-#about {
-  background: #fdfdfd;
-}
-
-#contact {
-  background: #fdfdfd;
 }
 
 #projects {
@@ -139,7 +148,9 @@ h2 {
   height: 100px !important;
 }
 .is-sticky .logo {
-  height: 100px !important;
+  height: 100px;
+  width: 200px;
+  transition: none !important;
 }
 .is-sticky ul {
   height: 100px !important;
@@ -155,16 +166,30 @@ h2 {
 .logo {
   height: 120px;
   width: 200px;
-  background: url("logo.png") center center;
-  margin-right: auto;
+  background-image: url("logo.png");
+  background-position: center center;
+  background-repeat: no-repeat;
   transition: height 0.3s;
+  border-radius: 30px;
+  background-color: #fdfdfd;
+}
+
+.footer-logo {
+  height: 120px;
+  width: 200px;
+  background: url("logo.png") center center;
+  top: 30px;
+  margin: 0;
+  left: 50px;
   position: absolute;
+  border-radius: 30px;
+  background-color: #fdfdfd;
 }
 
 .display {
   width: 80%;
   height: 80%;
-  margin: 10% auto;
+  margin: 0 auto 10%;
   background-color: #fdfdfd;
   display: flex;
   flex-wrap: nowrap;
@@ -194,7 +219,7 @@ h2 {
 
 /* For testimonial */
 .demo {
-  background: #e66d17;
+  background: #ff7a1b;
 }
 
 .testimonial {
@@ -316,7 +341,7 @@ form {
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #e66d17;
+  border: 2px solid #ff7a1b;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -326,7 +351,7 @@ form {
 }
 
 .feedback-input:focus {
-  border: 2px solid #e66d17;
+  border: 2px solid #ff7a1b;
 }
 
 textarea {
@@ -338,7 +363,7 @@ textarea {
 [type=submit] {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   width: 100%;
-  background: #e66d17;
+  background: #ff7a1b;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
@@ -364,7 +389,7 @@ footer {
 }
 footer div {
   height: 100%;
-  width: 350px;
+  width: 300px;
   background-color: #434249;
   margin: 0 5vw;
   position: relative;
@@ -376,10 +401,46 @@ i {
   bottom: 20%;
 }
 
+@media only screen and (max-width: 850px) {
+  .menu {
+    display: block;
+  }
+
+  nav ul li:not(:last-child):not(:first-child) {
+    display: none;
+  }
+
+  .topbar {
+    display: none;
+  }
+}
+@media only screen and (max-width: 768px) {
+  section {
+    height: 900px;
+  }
+
+  .display {
+    height: 600px;
+  }
+}
 @media only screen and (max-width: 600px) {
   .display {
+    justify-content: center;
     flex-direction: column;
-    height: 1600px;
+  }
+  .display .content {
+    width: 90%;
+  }
+  .display .image {
+    width: 90%;
+  }
+
+  footer {
+    height: 610px;
+    flex-direction: column-reverse;
+  }
+  footer div {
+    margin: 10px auto;
   }
 }
 
