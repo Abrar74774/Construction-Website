@@ -45,12 +45,51 @@ p {
   position: absolute;
   color: white;
 }
+
+#moberlay {
+  height:100%;
+  width: 100%;
+  background-color: rgb(34, 34, 34);  
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: -1;
+  display: block;
+  opacity:0;
+  transition: opacity 0.4s;
+}
+
+.sidebar {
+  height:100%;
+  width: 70%;
+  position: fixed;
+  background-color: $main-col;
+  left:-70%;
+  z-index: 99999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: left 0.4s;
+  div {
+    a {
+      color:$sec-col;
+      font-size: 24px;
+      padding: 10px 30px;
+      display: block;
+      margin: 20px 0;        
+      height:50px;
+      overflow: hidden;
+      text-align: center;
+      text-decoration: none;  
+    }
+  }  
+}
 // Snippet
-.navbar {  
+#navbar {  
   background:$main-col;
   height:120px;
   width:100%;
-  position:relative;
+  position: relative;
   z-index: 99;
   box-shadow: 0px 8px 20px #00000077 ;
   ul{
@@ -114,10 +153,9 @@ p {
 }*/
 
 section{
-  height: 100vh;
+  height: 80vh;
   position:relative;
-  margin-bottom: 20px;
-  padding:0;  
+  padding:40px 0;  
   display:block;
   z-index: 0;
   overflow: hidden;
@@ -131,7 +169,16 @@ section{
     image: url("construction.jpg");
     size: cover;
     attachment:fixed;
-    position: 0px 50px; 
+    position: center center; 
+  }
+  .welcome {
+    text-align: center;
+    transform: translateY(-250%);
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-175%) translateX(-50%);
   }
 }
 
@@ -190,7 +237,7 @@ h2{
 .display {
   width:80%;
   height:80%;
-  margin:0 auto 10%;
+  margin:0 auto;
   background-color: $main-col;
   display: flex;
   flex-wrap: nowrap;
@@ -328,7 +375,6 @@ h2{
 form { max-width:820px; margin:50px auto;background-color: $main-col; }
 
 .feedback-input {
-  color:white;
   font-family: Helvetica, Arial, sans-serif;
   font-weight:500;
   font-size: 18px;
@@ -368,7 +414,7 @@ textarea {
   font-weight:700;
 
 }
-[type="submit"]:hover { background:rgb(236, 142, 74); }
+[type="submit"]:hover { background:rgb(255, 144, 65); }
 
 
 footer {
@@ -401,14 +447,16 @@ i {
     display: none;
   }
 }
-@media only screen and (max-width:768px) {
-  section {
-    height: 900px;
-  }
-  .display {    
-    height: 600px;
-  }
-}
+// @media only screen and (max-width:768px) {
+//   section {
+//     height: 900px;
+//   }
+//   .display {    
+//     height: 600px;
+//   }
+// }
+
+//===================== MOB ===================
 @media only screen and (max-width:600px) {
   .display {
     justify-content: center;
@@ -420,6 +468,19 @@ i {
       width: 90%;
     }
   }
+
+  nav.navbar {
+    display: none;
+  }
+
+  #home {
+    background-position: 40% center;
+  }
+
+  #home .overlay .welcome {
+    top:60%;
+  }
+
   footer {
     height: 610px;
     flex-direction: column-reverse;

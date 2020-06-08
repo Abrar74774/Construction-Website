@@ -1,0 +1,22 @@
+{
+  "name": "proj8_construction_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "sass": "node-sass -w style.scss style.css --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abrar74774/Construction-Website.git"
+  },
+  "author": "Abrar SHahriar Hossain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Abrar74774/Construction-Website/issues"
+  },
+  "homepage": "https://github.com/Abrar74774/Construction-Website#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
