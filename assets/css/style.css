@@ -142,7 +142,7 @@ section {
   padding: 0 !important;
   background: #2c312f;
   position: relative;
-  background-image: url("construction.jpg");
+  background-image: url("./../images/construction.jpg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center center; }
@@ -182,7 +182,7 @@ h2 {
 .logo {
   height: 120px;
   width: 200px;
-  background-image: url("logo.png");
+  background-image: url("./../images/logo.png");
   background-position: center center;
   background-repeat: no-repeat;
   transition: height 0.3s;
@@ -192,7 +192,7 @@ h2 {
 .footer-logo {
   height: 120px;
   width: 200px;
-  background: url("logo.png") center center;
+  background: url("./../images/logo.png") center center;
   top: 30px;
   margin: 0;
   left: 50px;
