@@ -9,14 +9,11 @@ html,body {
   padding: 0;
   margin: 0;
   min-height: 100%;
-  width: 100%;
+  width: 100vw;
   font-family: Raleway,sans-serif;
   color:#202020;
   position: relative;
   background-color: $main-col;
-}
-body {
-  min-height: 100%;
 }
 h1 {
   font-size: 36px;
@@ -153,20 +150,21 @@ p {
 }*/
 
 section{
-  height: 80vh;
+  min-height: 80vh;
   position:relative;
-  padding:40px 0;  
+  padding: 10rem 0;  
   display:block;
   z-index: 0;
   overflow: hidden;
   background-color: $main-col;
 }
+
 #home{
-  padding:0 !important;
+  padding:0;
   background:rgb(44, 49, 47); 
   position: relative;   
   background: {
-    image: url("construction.jpg");
+    image: url("/assets/images/construction.jpg");
     size: cover;
     attachment:fixed;
     position: center center; 
@@ -215,7 +213,7 @@ h2{
 .logo {
   height:120px;
   width:200px;
-  background-image: url("logo.png");
+  background-image: url("/assets/images/logo.png");
   
   background-position: center center; 
   background-repeat: no-repeat;   
@@ -226,7 +224,7 @@ h2{
 .footer-logo {
   height:120px;
   width:200px;
-  background: url("logo.png") center center;   
+  background: url("/assets/images/logo.png") center center;   
   top:30px;
   margin: 0;  
   left:50px;
@@ -246,7 +244,6 @@ h2{
       position:center center;
       size:cover;      
     }
-    height: 100%;
     width:50%;
   }
   .content {
@@ -347,9 +344,12 @@ h2{
 
 /* CSS Grid*/
 .img-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 5px;
+  text-align: center;
+  img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+  }
 }
 
 /* Media Query for changing grid on bigger screens*/
@@ -432,10 +432,13 @@ footer {
     border-radius: 25px;
   }
 }
+
 i {
   position: relative;
   bottom:20%;
 }
+
+
 @media only screen and (max-width:850px) {
   .menu {
     display: block;
